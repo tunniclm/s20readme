@@ -30,7 +30,7 @@ This application has been generated with the following capabilities and services
 * [Redis](#redis)
 
 #### Static web file serving
-This application includes a `public` directory in the root of the project. The contents of this directory will be served as static content using the built-in Kitura module [StaticFileServer](https://github.com/IBM-Swift/Kitura/wiki/Serving-Static-Content).
+This application includes a `public` directory in the root of the project. The contents of this directory will be served as static content using the built-in Kitura [StaticFileServer module](https://github.com/IBM-Swift/Kitura/wiki/Serving-Static-Content).
 
 This content is hosted on `/`. For example, if you want to view `public/myfile.html` and the application is hosted at https://localhost:8080, go to https://localhost:8080/myfile.html.
 #### OpenAPI / Swagger endpoint
@@ -59,15 +59,15 @@ The `Dockerfile` defines the specification of the default docker image for runni
 
 The `Dockerfile-tools` is a docker specification file similar to the `Dockerfile`, except it includes the tools required for compiling the application. This image can be used to compile the application.
 
-Details on how to build the docker images, compile and run the application within the docker image can be found in the [Run section below](#run).
+Details on how to build the docker images, compile and run the application within the docker image can be found in the [Run section](#run) below.
 #### CouchDB
-This application uses the CouchDB (https://github.com/IBM-Swift/Kitura-CouchDB) library, which allows Kitura applications to interact with a CouchDB database.
+This application uses the [Kitura-CouchDB package](https://github.com/IBM-Swift/Kitura-CouchDB), which allows Kitura applications to interact with a CouchDB database.
 
 CouchDB speaks JSON natively and supports binary for all your data storage needs.
 
 Boilerplate code for creating a client object for the Kitura-CouchDB API is included inside `Sources/Application/Application.swift` as an `internal` variable available for use anywhere in the `Application` module.
 
-The connection details for this client are loaded using the [configuration module](#configuration) and are passed to the Kitura-CouchDB client in the boilerplate code.
+The connection details for this client are loaded by the [configuration](#configuration) code and are passed to the Kitura-CouchDB client in the boilerplate code.
 #### Redis
 This application uses the [Kitura-redis](http://ibm-swift.github.io/Kitura-redis/) library, which allows Kitura applications to interact with a Redis database.
 
@@ -75,14 +75,14 @@ Redis is an open source (BSD licensed), in-memory data structure store, used as 
 
 Boilerplate code for creating a client object for the Kitura-redis API is included inside `Sources/Application/Application.swift` as an `internal` variable available for use anywhere in the `Application` module.
 
- The connection details for this client are loaded using the [configuration module](#configuration) and stored in a `struct` for easy access when creating connections to Redis.
+ The connection details for this client are loaded by the [configuration](#configuration) code and stored in a `struct` for easy access when creating connections to Redis.
 
 ### Configuration
 Your application configuration information is stored in the `config.json` in the project root directory. This file is in the `.gitignore` to prevent sensitive information from being stored in git.
 
 The connection information for any configured services, such as username, password and hostname, is stored in this file.
 
-The application uses the [Configuration](https://github.com/IBM-Swift/Configuration) module to read the connection and configuration information from this file.
+The application uses the [Configuration package](https://github.com/IBM-Swift/Configuration) to read the connection and configuration information from this file.
 
 ### Run
 To build and run the application:
@@ -103,8 +103,6 @@ To compile the application using the tools docker image, run:
 To run the application:
 * `docker run -it -p 8080:8080 -v $PWD:/root/project -w /root/project myapp-run sh -c .build/release/`
 
-
-*Note* you must publish your project to [Github](https://github.com/) for the above command to work.
 
 ### License
 All generated content is available for use and modification under the permissive MIT License (see `LICENSE` file), with the exception of SwaggerUI which is licensed under an Apache-2.0 license (see `NOTICES.txt` file).
