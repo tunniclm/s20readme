@@ -22,7 +22,7 @@ This application has been generated with the following capabilities and services
 
 * [Configuration](#configuration)
 * [Static web file serving](#static-web-file-serving)
-* [OpenAPI / Swagger endpoint](#openapi-swagger-endpoint)
+* [OpenAPI / Swagger endpoint](#openapi--swagger-endpoint)
 * [Example endpoints](#example-endpoints)
 * [Embedded metrics dashboard](#embedded-metrics-dashboard)
 * [Docker files](#docker-files)
