@@ -44,7 +44,7 @@ The specification of this interface is made available through an embedded Swagge
 
 The Swagger UI will document the paths and http methods that are supported by the application.
 #### Embedded metrics dashboard
-This application uses the [SwiftMetrics](https://developer.ibm.com/swift/monitoring-diagnostics/application-metrics-for-swift/) library to gather application and system metrics.
+This application uses the [SwiftMetrics package](https://github.com/RuntimeTools/SwiftMetrics) to gather application and system metrics.
 
 These metrics can be viewed in an embedded dashboard on `/swiftmetrics-dash`. The dashboard displays various system and application metrics, including CPU, memory usage, HTTP response metrics and more.
 #### Docker files
