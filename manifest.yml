@@ -1,0 +1,17 @@
+applications:
+- name: gyui
+  random-route: true
+  memory: 128M
+  instances: 1
+  disk_quota: 1024M
+  buildpack: swift_buildpack
+  command: gyui --bind 0.0.0.0:$PORT
+  env:
+    OPENAPI_SPEC: "/swagger/api"
+  services:
+  - gyui-Cloudant-t8l3
+  - gyui-Redis-x9h2
+  - gyui-ObjectStorage-h5r6
+  - gyui-AppID-l9a0
+  - gyui-AutoScaling-o7u5
+  timeout: 180
